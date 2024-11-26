@@ -22,7 +22,6 @@ const AddCoffee = () => {
       details,
       photo,
     };
-    console.log(newCoffee);
 
     fetch("http://localhost:5000/coffee", {
       method: "POST",
@@ -33,7 +32,6 @@ const AddCoffee = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-          console.log(data);
           Swal.fire({
             title: "Success!",
             text: "User added successfully",

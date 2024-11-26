@@ -3,7 +3,6 @@ import Swal from "sweetalert2";
 
 const UpdateCoffee = () => {
   const coffee = useLoaderData();
-  console.log(coffee);
   const { _id, name, quantity, suplier, taste, category, details, photo } =
     coffee;
 
@@ -19,7 +18,6 @@ const UpdateCoffee = () => {
     const photo = form.photo.value;
 
     const updateCoffee = { name,quantity, suplier, taste, category, details, photo};
-    console.log(updateCoffee);
     fetch(`http://localhost:5000/coffee/${_id}`, {
       method: "PUT",
       headers: {
@@ -29,7 +27,6 @@ const UpdateCoffee = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
