@@ -29,7 +29,7 @@ const AddCoffee = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(newCoffee),
+        body: JSON.stringify(newCoffee),
     })
       .then((res) => res.json())
       .then((data) => {
