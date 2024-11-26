@@ -41,12 +41,14 @@ const UpdateCoffee = () => {
      .then((res) => res.json())
      .then((data) => {
        console.log(data);
-       Swal.fire({
-         title: "Success!",
-         text: "Coffee added successfully",
-         icon: "success",
-         confirmButtonText: "Cool",
-       });
+         if (data.modifiedCount > 0) {
+           Swal.fire({
+             title: "Success!",
+             text: "Coffee updated successfully",
+             icon: "success",
+             confirmButtonText: "Cool",
+           });
+     }
      });
  };
 
